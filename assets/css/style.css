@@ -1,0 +1,55 @@
+h1 {
+  text-align: center;
+  /* background-color: grey; */
+  color: green;
+}
+
+h2 {
+  color: deeppink;
+}
+
+h3 {
+  color: orange;
+}
+
+img {
+  box-shadow: 10px 10px 5px lightcyan;
+}
+
+section {
+  background-color: #000;
+}
+
+p {
+  font-size: 15px;
+  color: gray;
+}
+
+ul {
+  border-style: solid;
+  color: gray;
+}
+
+.purple {
+  color: purple;
+}
+
+#red {
+  color: red;
+}
+
+#big-font {
+  font-size: 40px;
+}
+
+#bold-font {
+  font-weight: bold;
+}
+
+.back-black {
+  background-color: #000;
+}
+
+.small-font {
+  font-size: 10px;
+}
