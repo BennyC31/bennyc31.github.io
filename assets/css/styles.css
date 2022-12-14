@@ -1,0 +1,83 @@
+.navbar {
+  background: lightseagreen;
+}
+
+.navbar-brand{
+  font-style: normal;
+  text-decoration-color: red;
+}
+
+body{
+  margin: 20px;
+}
+
+.body-wrap {
+  margin: 20px;
+  text-align: center;
+}
+
+.img-wrap {
+  float: left;
+  margin: 5px;
+}
+
+.p-wrap {
+  text-align: justify;
+  font-size: 15px;
+  margin: 20px;
+}
+h3, h4{
+  margin: 20px;
+  color:lightseagreen;
+}
+
+.col-center-text {
+  text-align: center;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.div-table{
+  margin-left: 20px;
+}
+table{
+  border: 0;
+  width: 100%;
+  font-size: 11px;
+  font-style: normal;
+}
+tr{
+  text-align: left;
+  font-style: normal;
+}
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+th{
+  text-align: left;
+  font-style: normal;
+  /* font-size: 12px; */
+  padding: 0 5px;
+}
+td{
+  padding: 0 5px;
+}
+
+/* Adding media queries to show the drop-down, and hide the navbar when the screen is smaller than 480 pixels */
+/* @media (max-width: 480px) {
+  .navbar li {
+    padding: 10px;
+  }
+
+    .navbar ul {
+    visibility: hidden;
+  }
+
+  #nav-select {
+    visibility: visible;
+  }
+} */
