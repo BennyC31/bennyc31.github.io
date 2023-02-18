@@ -60,12 +60,13 @@
   </nav>
   <!-- End of navbar -->
 
+
   <!-- Start of container -->
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <div class="row">
-          <h3>Data Visualization Pages</h3>
+          <h3>Summary: Latitude vs. X</h3>
         </div>
         <div>
           <hr>
@@ -75,12 +76,55 @@
             <img class="img-wrap" src="./assets/images/Fig1.png" alt="Max Temperature" width="200" height="200">
           </div>
           <p class="p-wrap">
-            The purpose is to display visualizations for the Penn Data Science Bootcamp as well as personal
-            visualizations.
+            The purpose of this project was to analyze how weather changes as you get closer to the equator. To
+            accomplish this analysis,
+            we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.<br><br>
+            After assembling the dataset, we used Mapplotlib to plot various aspects of the weather vs. Latitude.
+            Factors we looked at included:
+            temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations
+            created as part of the
+            analysis, as well as explanations and descriptions of any trends and correlations witnessed.
           </p>
         </div>
       </div>
+      <div class="col-sm-auto">
+        <div class="row">
+          <h3>Visualizations</h3>
+        </div>
+        <div>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <a href="./visualizations/temp.html"><img src="./assets/images/Fig1.png" alt="Max Temperature" width="100"
+                height="100"></a>
+              <div class="row">
+                <div class="col">
+                  <a href="./visualizations/humidity.html"><img src="./assets/images/Fig2.png" alt="Humidity" width="100"
+                    height="100"></a>
+                </div>
+              </div>
+            </div>
 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <a href="./visualizations/cloudiness.html"><img src="./assets/images/Fig3.png" alt="Cloudiness" width="100"
+                  height="100"></a>
+              <div class="row">
+                <div class="col">
+                  <a href="./visualizations/wind.html"><img src="./assets/images/Fig4.png" alt="Wind Speed" width="100"
+                      height="100"></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Start of Visualizations imageNav Area -->
     <!-- End of the Visualizations imageNav Area -->

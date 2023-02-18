@@ -8,6 +8,7 @@
 }
 
 body{
+  padding: 0;
   margin: 20px;
 }
 
@@ -65,6 +66,43 @@ th{
 }
 td{
   padding: 0 5px;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.legend {
+  padding: 10px;
+  font-family: serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 10px;
+  color: #555;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.legend .under_10 {
+  color: lightgreen;
+}
+.legend .under_30 {
+  color: darkgreen;
+}
+.legend .under_50 {
+  color: gold;
+}
+.legend .under_70 {
+  color:brown;
+}
+.legend .under_90 {
+  color: darkorange;
+}
+.legend .over_90 {
+  color: red;
 }
 
 /* Adding media queries to show the drop-down, and hide the navbar when the screen is smaller than 480 pixels */
