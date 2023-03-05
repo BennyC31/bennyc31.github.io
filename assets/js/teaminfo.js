@@ -2,7 +2,6 @@ const sum_data_url = 'https://raw.githubusercontent.com/BennyC31/bennyc31.github
 const year_data_url = 'https://raw.githubusercontent.com/BennyC31/bennyc31.github.io/main/Resources/proj3_year_data.json'
 let data = []
 let y_data = []
-var cur_year = []
 function teamInfo(s_id) {
     let conf = ''
     let div = ''
@@ -47,10 +46,17 @@ function get_team_id(team_name) {
     return team_id
 };
 
+function resetdropdown() {
+    console.log('reset')
+    let select = document.getElementById("selDataset")
+    select.innerText = null;
+};
+
 function updateDashboard() {
-    console.log('updateDB')
+    console.log('updateDB');
+    resetdropdown();
     let subjdropdownMenu = d3.select("#selDataset")
-    console.log(`team: ${data[0]}`)
+    // console.log(`team: ${data[0]}`)
     for (let i = 0; i < data.length; i++) {
         let s_id = data[i]['team_name']
         subjdropdownMenu.append('option').text(s_id).property('value', s_id);
@@ -58,7 +64,6 @@ function updateDashboard() {
     }
     let init_id = subjdropdownMenu.property("value");
     let team_id = get_team_id(init_id);
-    console.log(team_id);
     teamInfo(init_id);
     barChart(team_id);
     gaugeChart(team_id);
@@ -113,31 +118,39 @@ function bubbleChart() {
 function gaugeChart(team_id) {
     let stats = data;
     let ws = 0;
+    let ls = 0;
+    let ts = 0;
     for (var i = 0; i < stats.length; i++) {
         if (team_id == stats[i]['team_id']) {
             ws = stats[i]['w']
+            ls = stats[i]['l']
+            ts = stats[i]['t']
             break;
         }
     }
+    gms = ws + ls + ts
+    gm_mid = gms * .5
+    console.log(gms)
+    console.log(gm_mid)
     gaugedata = [
         {
             type: "indicator",
             mode: "number+gauge",
             value: ws,
-            delta: { reference: 80 },
+            delta: { reference: gm_mid },
             domain: { x: [0.25, 1], y: [0.7, 0.9] },
             title: { text: "Total Wins" },
             gauge: {
                 shape: "bullet",
-                axis: { range: [null, 160] },
+                axis: { range: [null, gms] },
                 threshold: {
                     line: { color: "yellow", width: 2 },
                     thickness: 0.75,
-                    value: 80.5
+                    value: gms * .5
                 },
                 steps: [
-                    { range: [0, 80], color: "red" },
-                    { range: [81, 160], color: "green" }
+                    { range: [0, gm_mid], color: "red" },
+                    { range: [gm_mid+1, 160], color: "green" }
                 ],
                 bar: { color: "black" }
             }
@@ -159,7 +172,7 @@ function barChart(team_id) {
     let w = []
     let l = []
     let t = []
-    let years = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
+    let years = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,2022]
     for (var i = 0; i < stats.length; i++) {
         if (team_id == stats[i]['team_id']) {
             w.push(stats[i]['w'])
@@ -221,6 +234,7 @@ function loadTeamSummary(){
         console.log('sum');
         console.log(tmp_data);
         data = tmp_data;
+        updateDashboard();
     });
 };
 function loadYearlyData(){
