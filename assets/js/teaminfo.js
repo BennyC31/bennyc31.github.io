@@ -1,6 +1,7 @@
-
-let data = null
-let y_data = null
+const sum_data_url = 'https://raw.githubusercontent.com/BennyC31/bennyc31.github.io/main/Resources/proj3_sum_data.json'
+const year_data_url = 'https://raw.githubusercontent.com/BennyC31/bennyc31.github.io/main/Resources/proj3_year_data.json'
+let data = []
+let y_data = []
 var cur_year = []
 function teamInfo(s_id) {
     let conf = ''
@@ -47,7 +48,9 @@ function get_team_id(team_name) {
 };
 
 function updateDashboard() {
+    console.log('updateDB')
     let subjdropdownMenu = d3.select("#selDataset")
+    console.log(`team: ${data[0]}`)
     for (let i = 0; i < data.length; i++) {
         let s_id = data[i]['team_name']
         subjdropdownMenu.append('option').text(s_id).property('value', s_id);
@@ -213,13 +216,26 @@ function barChart(team_id) {
     Plotly.newPlot('bar', bar_data, layout, config);
 
 }
-function init() {
-    d3.json("/locdata").then(function (tmp_data) {
-        y_data = tmp_data[2] //year_data
-        data = tmp_data[1] //sum_data
-        // console.log(data);
+function loadTeamSummary(){
+    d3.json(sum_data_url).then(function (tmp_data) {
+        console.log('sum');
+        console.log(tmp_data);
+        data = tmp_data;
+    });
+};
+function loadYearlyData(){
+    d3.json(year_data_url).then(function (tmp_yr_data) {
+        console.log('year');
+        console.log(tmp_yr_data);
+        y_data = tmp_yr_data;
         updateDashboard();
-    })
-}
+    });
+};
+function init() {
+    console.log('init')
+    loadTeamSummary();
+    loadYearlyData();
+    
+};
 
 init();
