@@ -1,14 +1,25 @@
-# Web Design Challenge Overview
-This challenge uses HTML, CSS and Bootstrap to create dashboard based on the WeatherPy challenge.
+# My GitHub Pages
+Provides links and information to personal and project pages.  Links are provided to relevant personal project.
 
 ## GitHub Pages Links
-* https://bennyc31.github.io/
-* https://bennyc31.github.io/index.html
+* [Home Page](https://bennyc31.github.io/)
+* [Index Page](https://bennyc31.github.io/index.html)
+* [Earthquakes](https://bennyc31.github.io/leaflet_challenge.html)
+    * Plots earthquakes from around the world over the past 7 days
+    * Source: https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+* [Football Info](https://bennyc31.github.io/teaminfo.html)
+    * Contains information from 2012 - 2022
+    * Provides information for all 32 Professional Football Teams
+    * Includes a comparison of total points scored by each team
+* [Football Map](https://bennyc31.github.io/footballmap.html)
+    * Contains information from 2012 - 2022
+    * Plots each team on a map of the United States for their current location
 
-## Notes
-* I used all the content provided.
-* If content was not provided I added my own content.
-* I commented out the @media queries because I didn't like the look of having no menus with a smaller screen.  The meta viewport tags in the <head> section handle the screen layout for all sizes.
+## Tableau
+* [America Football History](https://public.tableau.com/app/profile/ben.calderaio/viz/AmericanFootballLocationHistory/AmericanFootballHistory)
+    * Contains information for teams from multiple professional football leagues (NFL, AFL, USFL, AAFC)
+    * Each tile is interactive
 
-## Bonus
-Not enough time, but I may revisit and some bonus content.
+## GitHub Project Repositories
+* [American Football Dashboard](https://github.com/BennyC31/American-Football-Dashboard)
+    * *Coming soon*: Estimated Initial Release April 1, 2023
