@@ -1,4 +1,5 @@
-const sum_data_url = 'https://raw.githubusercontent.com/BennyC31/bennyc31.github.io/main/Resources/proj3_sum_data.json'
+// const sum_data_url = 'https://raw.githubusercontent.com/BennyC31/bennyc31.github.io/main/Resources/proj3_sum_data.json'
+const sum_data_url = 'https://raw.githubusercontent.com/BennyC31/bennyc31.github.io/main/Resources/git_data.json'
 var myMap = L.map("map", {
     center: [
         37.09, -95.71
