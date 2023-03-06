@@ -1,3 +1,4 @@
+const sum_data_url = 'https://raw.githubusercontent.com/BennyC31/bennyc31.github.io/main/Resources/proj3_sum_data.json'
 var myMap = L.map("map", {
     center: [
         37.09, -95.71
@@ -9,8 +10,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap)
 
-d3.json("/locdata").then(function (tmp_data) {
-    data = tmp_data[1]
+d3.json(sum_data_url).then(function (tmp_data) {
+    data = tmp_data
     // data1 = sum_data
     console.log(data);
     createMarkers(data);
@@ -45,6 +46,11 @@ function createMarkers(teamLocs) {
             lat = 34.15369;
             lon = -118.34277;
         }
+        gp = (tot_w + tot_l + tot_t);
+        wins = (tot_w + (tot_t * .5))
+        win_pct = wins / gp;
+        pct = win_pct.toFixed(3);
+        pt_dif = tot_pf - tot_pa;
 
 
         var color = 'blue'
@@ -59,8 +65,9 @@ function createMarkers(teamLocs) {
             <h5>state: ${state_abrv}</h5>
             <h5>conference: ${conf}</h5>
             <h5>division: ${div}</h5><hr>
-            <h5>10 Year Summary</h5>
-            <h6>W: ${tot_w} L: ${tot_l} T: ${tot_t} PF: ${tot_pf} PA: ${tot_pa}</h6>`);
+            <h5>Summary</h5>
+            <h6>W: ${tot_w} L: ${tot_l} T: ${tot_t} PF: ${tot_pf} PA: ${tot_pa}</h6>
+            <h6>Win %: ${pct} Pt Diff: ${pt_dif}</h6>`);
     }
     // Create a legend to display information about our map.
     var info = L.control({
@@ -80,7 +87,7 @@ function createMarkers(teamLocs) {
 
 function updateLegend() {
     document.querySelector(".legend").innerHTML = [
-        "<p><strong>2012 - 2021</strong></p>",
+        "<p><strong>2012 - 2022</strong></p>",
         "<h6 class='American'>American Conference</h6>",
         "<h6 class='National'>National Conference</h6>"
     ].join("");

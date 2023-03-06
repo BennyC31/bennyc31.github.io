@@ -10,7 +10,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-
+// All earthquakes for the past 7 days
+// https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
 let qry_url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson'
 d3.json(qry_url).then(function (data) {
   earthquake_count = data.metadata.count;

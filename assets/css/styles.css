@@ -85,6 +85,12 @@ html {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
+.legend .American {
+  color: red;
+}
+.legend .National {
+  color: blue;
+}
 
 .legend .under_10 {
   color: lightgreen;
