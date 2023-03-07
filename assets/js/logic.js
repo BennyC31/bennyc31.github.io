@@ -70,8 +70,8 @@ function createMarkers(earthquakeData,updatedAt,quake_cnt) {
 }
 
 function updateLegend(updatedAt, earthquake_count) {
-    console.log('Updated:')
-    console.log(updatedAt)
+    // console.log('Updated:')
+    // console.log(updatedAt)
     document.querySelector(".legend").innerHTML = [
     //   "<h6>Updated: " + updatedAt + "</h6>",
       "<h6>Count: " + earthquake_count + "</h6>",

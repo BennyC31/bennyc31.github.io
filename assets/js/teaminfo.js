@@ -30,7 +30,7 @@ function teamInfo(s_id) {
 
 function optionChanged(s_id) {
     let team_id = get_team_id(s_id);
-    console.log(team_id);
+    // console.log(team_id);
     teamInfo(s_id);
     barChart(team_id)
     gaugeChart(team_id);
@@ -47,13 +47,13 @@ function get_team_id(team_name) {
 };
 
 function resetdropdown() {
-    console.log('reset')
+    // console.log('reset')
     let select = document.getElementById("selDataset")
     select.innerText = null;
 };
 
 function updateDashboard() {
-    console.log('updateDB');
+    // console.log('updateDB');
     resetdropdown();
     let subjdropdownMenu = d3.select("#selDataset")
     // console.log(`team: ${data[0]}`)
@@ -67,53 +67,53 @@ function updateDashboard() {
     teamInfo(init_id);
     barChart(team_id);
     gaugeChart(team_id);
-    bubbleChart();
+    // bubbleChart();
 
 };
-function bubbleChart() {
-    let stats = data;
-    let teams = []
-    let pfs = []
-    let pas = []
-    for (var i = 0; i < stats.length; i++) {
-        teams.push(stats[i]['team_name']);
-        pfs.push(stats[i]['pf']);
-        pas.push(stats[i]['pa']);
-    };
+// function bubbleChart() {
+//     let stats = data;
+//     let teams = []
+//     let pfs = []
+//     let pas = []
+//     for (var i = 0; i < stats.length; i++) {
+//         teams.push(stats[i]['team_name']);
+//         pfs.push(stats[i]['pf']);
+//         pas.push(stats[i]['pa']);
+//     };
 
-    var trace1 = {
-        x: teams,
-        y: pfs,
-        mode: 'markers',
-        type: 'scatter',
-        name: 'PF',
-        marker: { size: 12 }
-    };
+//     var trace1 = {
+//         x: teams,
+//         y: pfs,
+//         mode: 'markers',
+//         type: 'scatter',
+//         name: 'PF',
+//         marker: { size: 12 }
+//     };
 
-    var trace2 = {
-        x: teams,
-        y: pas,
-        mode: 'markers',
-        type: 'scatter',
-        name: 'PA',
-        marker: { size: 12, color: 'rgb(255, 0, 0)' }
-    };
+//     var trace2 = {
+//         x: teams,
+//         y: pas,
+//         mode: 'markers',
+//         type: 'scatter',
+//         name: 'PA',
+//         marker: { size: 12, color: 'rgb(255, 0, 0)' }
+//     };
 
-    var bar_data = [trace1, trace2];
+//     var bar_data = [trace1, trace2];
 
-    var layout = {
-        xaxis: {
-            range: [-1, 32]
-        },
-        yaxis: {
-            range: [0, 6000]
-        },
-        title: 'Total Points For and Against'
-    };
-    var config = {responsive: true}
+//     var layout = {
+//         xaxis: {
+//             range: [-1, 32]
+//         },
+//         yaxis: {
+//             range: [0, 6000]
+//         },
+//         title: 'Total Points For and Against'
+//     };
+//     var config = {responsive: true}
 
-    Plotly.newPlot('bubble', bar_data, layout, config);
-}
+//     Plotly.newPlot('bubble', bar_data, layout, config);
+// }
 
 function gaugeChart(team_id) {
     let stats = data;
@@ -130,8 +130,8 @@ function gaugeChart(team_id) {
     }
     gms = ws + ls + ts
     gm_mid = gms * .5
-    console.log(gms)
-    console.log(gm_mid)
+    // console.log(gms)
+    // console.log(gm_mid)
     gaugedata = [
         {
             type: "indicator",
@@ -231,22 +231,22 @@ function barChart(team_id) {
 }
 function loadTeamSummary(){
     d3.json(sum_data_url).then(function (tmp_data) {
-        console.log('sum');
-        console.log(tmp_data);
+        // console.log('sum');
+        // console.log(tmp_data);
         data = tmp_data;
         updateDashboard();
     });
 };
 function loadYearlyData(){
     d3.json(year_data_url).then(function (tmp_yr_data) {
-        console.log('year');
-        console.log(tmp_yr_data);
+        // console.log('year');
+        // console.log(tmp_yr_data);
         y_data = tmp_yr_data;
         updateDashboard();
     });
 };
 function init() {
-    console.log('init')
+    // console.log('init')
     loadTeamSummary();
     loadYearlyData();
     

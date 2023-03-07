@@ -14,13 +14,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 d3.json(sum_data_url).then(function (tmp_data) {
     data = tmp_data
     // data1 = sum_data
-    console.log(data);
+    // console.log(data);
     createMarkers(data);
 })
 
 
 function createMarkers(teamLocs) {
-    console.log('in create markers:')
+    // console.log('in create markers:')
     for (var i = 0; i < teamLocs.length; i++) {
         lon = teamLocs[i]['lon']
         lat = teamLocs[i]['lat']
