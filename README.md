@@ -1,5 +1,5 @@
 # My GitHub Pages
-Provides links and information to personal and project pages.  Links are provided to relevant personal project.
+Provides links and information to personal and project pages.
 
 ## GitHub Pages Links
 * [Home Page](https://bennyc31.github.io/)
